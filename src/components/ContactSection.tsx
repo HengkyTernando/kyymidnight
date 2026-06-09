@@ -44,6 +44,7 @@ const SOCIALS = [
   { id: "telegram-cs",    label: "Telegram CS",     handle: "@kyyroblox",       href: "https://t.me/kyyroblox",         Icon: TelegramSVG,  color: "#0088cc" },
   { id: "whatsapp",       label: "WhatsApp CS",     handle: "0895385833237",    href: "https://wa.me/62895385833237",   Icon: WhatsAppSVG,  color: "#25d366" },
   { id: "discord",        label: "Discord CS",      handle: "@kyymidnight",     href: "https://discord.com",            Icon: DiscordSVG,   color: "#5865f2" },
+  { id: "telegram-proof", label: "Transaction Proofs", handle: "@testiekyyrblx",   href: "https://t.me/testiekyyrblx",     Icon: TelegramSVG,  color: "#10b981" },
 ];
 
 export default function ContactSection() {

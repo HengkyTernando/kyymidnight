@@ -89,7 +89,7 @@ export default function AboutSection() {
               KyyMidnight Store is dedicated to providing the best shopping experience for in-game items. All orders are processed manually by our active team members to ensure the highest safety and speed.
             </p>
             <p>
-              With hundreads of successful manual transactions, we are the preferred choice for gamers seeking high-quality digital assets at budget-friendly price points.
+              With hundreds of successful manual transactions, we are the preferred choice for gamers seeking high-quality digital assets. You can verify our transaction track record and customer proofs on Telegram at <a href="https://t.me/testiekyyrblx" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)", fontWeight: 600, textDecoration: "none" }}>@testiekyyrblx</a>.
             </p>
 
             {/* CS Active link button */}
