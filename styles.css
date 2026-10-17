@@ -1779,10 +1779,33 @@ img {
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1fr 170px;
+  grid-template-columns: minmax(220px, 1fr) auto 170px;
   align-items: center;
   gap: 46px;
   padding-bottom: 40px;
+}
+
+.footer-signoff-kicker {
+  color: #8ba8c6;
+  font-size: 0.59rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-signoff p {
+  margin: 9px 0 0;
+  color: #d6e2ef;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.footer-signoff p span {
+  color: #849bb5;
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-style: normal;
 }
 
 .footer-nav {
@@ -1885,7 +1908,7 @@ img {
   }
 
   .footer-main {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(220px, 1fr) auto;
     gap: 25px;
   }
 
@@ -2395,7 +2418,7 @@ img {
   .footer-main {
     grid-template-columns: 1fr;
     justify-items: start;
-    gap: 25px;
+    gap: 20px;
     padding-bottom: 29px;
   }
 
