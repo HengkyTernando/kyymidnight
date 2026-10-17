@@ -1779,17 +1779,10 @@ img {
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1fr auto 170px;
+  grid-template-columns: 1fr 170px;
   align-items: center;
   gap: 46px;
   padding-bottom: 40px;
-}
-
-.footer-brand p {
-  margin: 15px 0 0;
-  color: #879aaf;
-  font-size: 0.72rem;
-  line-height: 1.8;
 }
 
 .footer-nav {
