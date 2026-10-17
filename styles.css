@@ -122,18 +122,12 @@ img {
   letter-spacing: -0.035em;
 }
 
-.wordmark-icon {
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
+.wordmark-mascot {
+  --mascot-size: 38px;
+  flex: none;
   border: 1px solid rgb(168 201 232 / 34%);
   border-radius: 50%;
-  color: var(--mist);
-  font-family: Georgia, serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  letter-spacing: -0.08em;
+  background: rgb(16 35 63 / 80%);
 }
 
 .site-nav {

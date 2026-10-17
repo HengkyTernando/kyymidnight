@@ -1,4 +1,4 @@
-# KyyMidnight
+# kyymidnight
 
 A lightweight, responsive single-page portfolio built with semantic HTML,
 vanilla CSS, JavaScript modules, and locally vendored Anime.js. The original
@@ -26,11 +26,11 @@ the vendored library.
 ## Personalize
 
 Edit `site-content.js` to update skills, projects, interests, learning topics,
-and contact details. Contact email and social links are intentionally empty
-until real accounts are supplied. The SiswaMart card is a visual recreation of
+and contact details. WhatsApp, Instagram, and TikTok links are configured in
+`site-content.js`. The SiswaMart card is a visual recreation of
 its live homepage, using the site's food illustration in
 `public/images/projects/siswamart-food.png`; its link opens
-<https://siswamartid.my.id/>. The KyyMidnight card uses the original mascot
+<https://siswamartid.my.id/>. The kyymidnight card uses the original mascot
 artwork.
 
 All 15 original mascot PNGs are in `public/images/mascots/`. Use

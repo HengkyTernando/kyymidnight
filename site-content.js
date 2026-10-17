@@ -1,7 +1,11 @@
 export const siteConfig = {
   contact: {
     email: "",
-    socials: [],
+    whatsapp: "62895385833237",
+    socials: [
+      { label: "Instagram", url: "https://instagram.com/kyymidnight" },
+      { label: "TikTok", url: "https://www.tiktok.com/@kyymidnight" },
+    ],
   },
 };
 
@@ -69,14 +73,14 @@ export const projects = [
   },
   {
     number: "02",
-    name: "KyyMidnight Mascot & Branding",
+    name: "kyymidnight Mascot & Branding",
     category: "Visual identity · creative technology",
     description:
-      "A personal identity taking shape through this website and the original KyyMidnight cat mascot, with its expressions presented as transparent assets.",
+      "A personal identity taking shape through this website and the original kyymidnight cat mascot, with its expressions presented as transparent assets.",
     status: "Ongoing · visual identity",
     technologies: ["Original mascot artwork", "Web component", "Visual identity"],
     visual: "kyymidnight",
-    visualLabel: "Original KyyMidnight cat mascot artwork",
+    visualLabel: "Original kyymidnight cat mascot artwork",
     notes: [
       ["Focus", "A midnight-blue identity built around the supplied original cat mascot."],
       ["Implementation", "The 15 transparent poses are used by a reusable Web Component."],

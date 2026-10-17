@@ -97,7 +97,7 @@ document.querySelector("#project-grid").innerHTML = projects
               loading="lazy"
               decoding="async"
             >
-            <span class="visual-large visual-brand-name">Kyy<span>Midnight</span></span>
+            <span class="visual-large visual-brand-name">kyy<span>midnight</span></span>
             <span class="visual-caption">blue scarf · watercolor · a little attitude</span>
           ` : ""}
           ${project.visual === "kyymidnight" ? '<span class="visual-disclaimer">original mascot · brand concept</span>' : ""}
@@ -171,7 +171,17 @@ document.querySelector("#explore-list").innerHTML = exploringNext
 
 const contactAction = document.querySelector("#contact-action");
 const contactNote = document.querySelector("#contact-note");
-if (siteConfig.contact.email) {
+if (siteConfig.contact.whatsapp) {
+  const whatsapp = siteConfig.contact.whatsapp.replace(/\D/g, "");
+  if (!whatsapp) {
+    throw new Error("siteConfig.contact.whatsapp must contain a valid phone number.");
+  }
+  contactAction.innerHTML = `
+    <a class="button button-primary" href="https://wa.me/${encodeURIComponent(whatsapp)}" target="_blank" rel="noopener noreferrer">
+      Chat on WhatsApp <span aria-hidden="true">↗</span>
+    </a>
+  `;
+} else if (siteConfig.contact.email) {
   const email = escapeHtml(siteConfig.contact.email);
   contactAction.innerHTML = `<a class="button button-primary" href="mailto:${email}">Say hello <span aria-hidden="true">↗</span></a>`;
 } else {
