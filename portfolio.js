@@ -21,12 +21,20 @@ const escapeHtml = (value) =>
     return entities[character];
   });
 
+const arrowIcon = (direction = "northeast") => {
+  const paths = {
+    northeast: "M7 17 17 7M8 7h9v9",
+    right: "M5 12h14m-6-6 6 6-6 6",
+  };
+  return `<svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${paths[direction]}"></path></svg>`;
+};
+
 const mainNavigation = document.querySelector("#site-navigation");
 mainNavigation.innerHTML = navigation
   .map(([label, href]) => {
     const contactClass = href === "#contact" ? ' class="nav-contact"' : "";
     const current = href === "#home" ? ' aria-current="location"' : "";
-    const arrow = href === "#contact" ? ' <span aria-hidden="true">↗</span>' : "";
+    const arrow = href === "#contact" ? ` ${arrowIcon()}` : "";
     return `<a href="${escapeHtml(href)}"${contactClass}${current}>${escapeHtml(label)}${arrow}</a>`;
   })
   .join("");
@@ -115,9 +123,9 @@ document.querySelector("#project-grid").innerHTML = projects
           <ul class="project-tags" aria-label="Project themes">
             ${project.technologies.map((technology) => `<li>${escapeHtml(technology)}</li>`).join("")}
           </ul>
-          ${project.href ? `<a class="project-link" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true">↗</span></a>` : ""}
+          ${project.href ? `<a class="project-link" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer">Visit live website ${arrowIcon()}</a>` : ""}
           <details class="project-details">
-            <summary>Project notes <span aria-hidden="true">↗</span></summary>
+            <summary>Project notes <span>${arrowIcon()}</span></summary>
             <dl>
               ${project.notes
                 .map(
@@ -164,7 +172,7 @@ document.querySelector("#timeline").innerHTML = journey
 document.querySelector("#explore-list").innerHTML = exploringNext
   .map(
     (topic) => `
-      <li><span class="explore-arrow" aria-hidden="true">↗</span>${escapeHtml(topic)}</li>
+      <li><span class="explore-arrow" aria-hidden="true">${arrowIcon()}</span>${escapeHtml(topic)}</li>
     `,
   )
   .join("");
@@ -178,12 +186,12 @@ if (siteConfig.contact.whatsapp) {
   }
   contactAction.innerHTML = `
     <a class="button button-primary" href="https://wa.me/${encodeURIComponent(whatsapp)}" target="_blank" rel="noopener noreferrer">
-      Chat on WhatsApp <span aria-hidden="true">↗</span>
+      Chat on WhatsApp ${arrowIcon()}
     </a>
   `;
 } else if (siteConfig.contact.email) {
   const email = escapeHtml(siteConfig.contact.email);
-  contactAction.innerHTML = `<a class="button button-primary" href="mailto:${email}">Say hello <span aria-hidden="true">↗</span></a>`;
+  contactAction.innerHTML = `<a class="button button-primary" href="mailto:${email}">Say hello ${arrowIcon()}</a>`;
 } else {
   contactAction.innerHTML = `
     <button class="button button-disabled" type="button" disabled>
@@ -210,12 +218,14 @@ const socialIcons = {
   `,
   TikTok: `
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path class="icon-fill" d="M19.7 8.1a7.1 7.1 0 0 1-4.4-1.5v7.1a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.8 2.8 0 1 0 1.7 2.6V2.5h3.3c.2 2 1.9 3.7 4.2 3.9v1.7Z"></path>
+      <path d="M14.5 4v10.2a4.5 4.5 0 1 1-4.5-4.5c.4 0 .8.1 1.2.2v3.3a1.5 1.5 0 1 0 0 2V4h3.3c.3 1.8 1.7 3.2 3.5 3.5v3.3a8.8 8.8 0 0 1-3.5-.8"></path>
     </svg>
   `,
   Discord: `
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path class="icon-fill" d="M19.7 5.2a18 18 0 0 0-4.4-1.4l-.6 1.3a16.7 16.7 0 0 0-5.4 0l-.6-1.3a18 18 0 0 0-4.4 1.4C1.5 9.3.7 13.3 1.1 17.2a18 18 0 0 0 5.4 2.7l1.2-2a11.8 11.8 0 0 1-1.9-.9l.5-.4a12.8 12.8 0 0 0 11.4 0l.5.4a11.8 11.8 0 0 1-1.9.9l1.2 2a18 18 0 0 0 5.4-2.7c.5-4.5-.8-8.5-3.2-12Zm-11 9.7c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"></path>
+      <path d="M19.7 5.2a18 18 0 0 0-4.4-1.4l-.6 1.3a16.7 16.7 0 0 0-5.4 0l-.6-1.3a18 18 0 0 0-4.4 1.4C1.5 9.3.7 13.3 1.1 17.2a18 18 0 0 0 5.4 2.7l1.2-2a11.8 11.8 0 0 1-1.9-.9l.5-.4a12.8 12.8 0 0 0 11.4 0l.5.4a11.8 11.8 0 0 1-1.9.9l1.2 2a18 18 0 0 0 5.4-2.7c.5-4.5-.8-8.5-3.2-12Z"></path>
+      <circle cx="8.7" cy="12.9" r="1"></circle>
+      <circle cx="15.3" cy="12.9" r="1"></circle>
     </svg>
   `,
 };
@@ -233,7 +243,7 @@ if (configuredSocials.length) {
     link.setAttribute("aria-label", label);
     link.title = label;
     link.innerHTML =
-      socialIcons[label] ??
+      socialIcons[label]?.replace(/class="icon-fill"/g, "") ??
       `<span class="social-link-fallback">${escapeHtml(label)}</span>`;
     item.append(link);
     socialList.append(item);

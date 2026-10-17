@@ -162,6 +162,12 @@ img {
   color: var(--mist);
 }
 
+.nav-contact .line-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--mist);
+}
+
 .menu-toggle {
   display: none;
 }
@@ -267,6 +273,18 @@ img {
     background-color 160ms ease,
     color 160ms ease,
     transform 160ms ease;
+}
+
+.line-icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
 }
 
 .button:hover:not(:disabled) {
@@ -382,20 +400,23 @@ img {
 .star-one {
   top: 19%;
   right: 16%;
-  font-size: 1.4rem;
+  width: 28px;
+  height: 28px;
 }
 
 .star-two {
   top: 39%;
   left: 5%;
-  font-size: 3rem;
+  width: 48px;
+  height: 48px;
 }
 
 .star-three {
   right: 8%;
   bottom: 32%;
+  width: 20px;
+  height: 20px;
   color: #e9c59b;
-  font-size: 1rem;
 }
 
 .art-caption {
@@ -450,10 +471,10 @@ img {
   font-size: 0.68rem;
 }
 
-.scroll-cue span {
-  width: 24px;
-  height: 1px;
-  background: var(--wave);
+.scroll-cue .line-icon {
+  width: 19px;
+  height: 19px;
+  color: var(--mist);
 }
 
 .hero-index {
@@ -607,11 +628,17 @@ img {
 .about-figure figcaption {
   position: relative;
   z-index: 2;
-  margin-top: -10px;
-  color: #8299b4;
+  max-width: 90%;
+  margin-top: 12px;
+  padding: 5px 10px;
+  border: 1px solid rgb(168 201 232 / 18%);
+  background: rgb(11 20 38 / 88%);
+  color: #b8cbe0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.78rem;
   font-style: italic;
+  line-height: 1.45;
+  text-align: center;
 }
 
 .principles {
@@ -813,6 +840,9 @@ img {
 }
 
 .handwritten {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   margin-top: 17px;
   color: var(--mist);
   font-family: Georgia, "Times New Roman", serif;
@@ -1287,6 +1317,12 @@ img {
   color: var(--mist);
 }
 
+.project-footnote-star {
+  width: 24px;
+  height: 24px;
+  color: var(--mist);
+}
+
 .project-footnote p {
   max-width: 650px;
   margin: 0;
@@ -1561,8 +1597,14 @@ img {
 }
 
 .explore-arrow {
+  display: inline-flex;
+  flex: none;
+}
+
+.explore-arrow .line-icon {
+  width: 17px;
+  height: 17px;
   color: #83acd2;
-  font-size: 0.83rem;
 }
 
 .section-contact {
@@ -1667,12 +1709,7 @@ img {
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.7;
-}
-
-.social-link svg .icon-fill {
-  fill: currentColor;
-  stroke: none;
+  stroke-width: 2.4;
 }
 
 .social-link-fallback {
@@ -1715,8 +1752,9 @@ img {
   z-index: 3;
   top: 17%;
   right: 12%;
+  width: 25px;
+  height: 25px;
   color: #d6c8a6;
-  font-size: 1.5rem;
 }
 
 .contact-caption {
@@ -1781,7 +1819,10 @@ img {
   --mascot-size: 61px;
 }
 
-.footer-mascot > span > span {
+.footer-mascot > span > .line-icon {
+  width: 15px;
+  height: 15px;
+  vertical-align: -3px;
   color: var(--mist);
 }
 
@@ -1797,7 +1838,15 @@ img {
 }
 
 .back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: #b4c5d8;
+}
+
+.back-top .line-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .floating-top {
@@ -1820,6 +1869,11 @@ img {
     opacity 180ms ease,
     transform 180ms ease,
     visibility 180ms ease;
+}
+
+.floating-top .line-icon {
+  width: 21px;
+  height: 21px;
 }
 
 .floating-top.is-visible {
@@ -2118,9 +2172,7 @@ img {
     font-size: 1.27rem;
   }
 
-  .about-figure {
-    min-height: 320px;
-  }
+  .about-figure { min-height: 320px; }
 
   .about-figure coding-mascot {
     --mascot-size: 278px;
