@@ -25,6 +25,7 @@ export const skillGroups = [
     skills: [
       ["HTML", "building"],
       ["CSS", "building"],
+      ["JavaScript", "building"],
       ["PHP", "learning"],
       ["Laravel", "learning"],
       ["MySQL", "learning"],
@@ -41,6 +42,9 @@ export const skillGroups = [
       ["Prototyping", "practising"],
       ["Debugging & problem-solving", "learning"],
       ["New tools & workflows", "exploring"],
+      ["VS Code", "building"],
+      ["Git & GitHub", "building"],
+      ["AI-assisted development", "exploring"],
     ],
   },
 ];
@@ -64,18 +68,18 @@ export const projects = [
   },
   {
     number: "02",
-    name: "Midnight Store",
-    category: "Web development · digital experience",
+    name: "KyyMidnight Mascot & Branding",
+    category: "Visual identity · creative technology",
     description:
-      "A digital testimonial and reputation website project exploring how user feedback can be presented through a modern interface.",
-    status: "Exploration · in progress",
-    technologies: ["Interface exploration", "Digital testimonials"],
-    visual: "midnight-store",
-    visualLabel: "Digital feedback concept",
+      "A personal identity taking shape through this website and the original KyyMidnight cat mascot, with its expressions presented as transparent assets.",
+    status: "Ongoing · visual identity",
+    technologies: ["Original mascot artwork", "Web component", "Visual identity"],
+    visual: "kyymidnight",
+    visualLabel: "Original KyyMidnight cat mascot artwork",
     notes: [
-      ["Focus", "Exploring a modern way to present user feedback and testimonials."],
-      ["Details", "Implementation and technology details are not verified yet."],
-      ["Status", "Project exploration. No project screenshots are available yet."],
+      ["Focus", "A midnight-blue identity built around the supplied original cat mascot."],
+      ["Implementation", "The 15 transparent poses are used by a reusable Web Component."],
+      ["Status", "Ongoing personal branding project."],
     ],
   },
   {

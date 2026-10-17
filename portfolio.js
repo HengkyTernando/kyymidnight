@@ -68,18 +68,24 @@ document.querySelector("#project-grid").innerHTML = projects
   .map(
     (project) => `
       <article class="project-card">
-        <div class="project-visual project-visual-${escapeHtml(project.visual)}" role="img" aria-label="${escapeHtml(project.visualLabel)}. Conceptual artwork, not a project screenshot.">
+        <div class="project-visual project-visual-${escapeHtml(project.visual)}" role="img" aria-label="${escapeHtml(project.visualLabel)}. ${project.visual === "kyymidnight" ? "Original artwork presented in a brand concept, not a project screenshot." : "Conceptual artwork, not a project screenshot."}">
           ${project.visual === "siswamart" ? `
             <span class="visual-kicker">discover something local</span>
             <span class="visual-large">siswa<span>mart</span></span>
             <span class="visual-bar"><i></i><i></i><i></i><i></i></span>
             <span class="visual-caption">school sellers · product discovery</span>
           ` : ""}
-          ${project.visual === "midnight-store" ? `
-            <span class="visual-kicker">small words, real meaning</span>
-            <span class="visual-large visual-serif">notes from<br>the other side</span>
-            <span class="visual-stars" aria-hidden="true">✳ &nbsp; ✦ &nbsp; ✳</span>
-            <span class="visual-caption">a study in digital trust</span>
+          ${project.visual === "kyymidnight" ? `
+            <span class="visual-kicker">original artwork · ongoing identity</span>
+            <img
+              class="brand-mascot-art"
+              src="./public/images/mascots/alert.png"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+            <span class="visual-large visual-brand-name">Kyy<span>Midnight</span></span>
+            <span class="visual-caption">blue scarf · watercolor · a little attitude</span>
           ` : ""}
           ${project.visual === "afterglow" ? `
             <span class="landscape-moon" aria-hidden="true"></span>
@@ -88,7 +94,7 @@ document.querySelector("#project-grid").innerHTML = projects
             <span class="landscape-dock" aria-hidden="true"></span>
             <span class="landscape-caption">afterglow · a quiet place to wander</span>
           ` : ""}
-          <span class="visual-disclaimer">concept preview · not a project screenshot</span>
+          <span class="visual-disclaimer">${project.visual === "kyymidnight" ? "original mascot · brand concept" : "concept preview · not a project screenshot"}</span>
         </div>
         <div class="project-content">
           <div class="project-meta">
@@ -198,11 +204,12 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = mainNavigation;
-siteNav.inert = true;
+const mobileNavigation = window.matchMedia("(max-width: 700px)");
+siteNav.inert = mobileNavigation.matches;
 const setMenuOpen = (open) => {
   menuToggle.setAttribute("aria-expanded", String(open));
   menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-  siteNav.inert = !open;
+  siteNav.inert = mobileNavigation.matches && !open;
   document.body.classList.toggle("menu-open", open);
 };
 
@@ -216,6 +223,10 @@ siteNav.addEventListener("click", (event) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenuOpen(false);
+});
+
+mobileNavigation.addEventListener("change", () => {
+  setMenuOpen(false);
 });
 
 const sectionLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];

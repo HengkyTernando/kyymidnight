@@ -941,30 +941,26 @@ img {
   letter-spacing: 0.06em;
 }
 
-.project-visual-midnight-store::before {
-  background:
-    radial-gradient(ellipse at 78% 35%, rgb(91 113 154 / 18%), transparent 45%),
-    linear-gradient(130deg, #1a233a, #111728 75%);
+.project-visual-kyymidnight {
+  justify-content: center;
+  padding-right: 34%;
 }
 
-.project-visual-midnight-store {
-  align-items: center;
-  text-align: center;
+.brand-mascot-art {
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+  width: min(32%, 250px);
+  max-height: 96%;
+  object-fit: contain;
+  object-position: bottom;
 }
 
-.visual-serif {
-  color: #d8d5d2;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  line-height: 1.08;
-}
-
-.visual-stars {
-  color: #b4c9e1;
-  font-size: 0.8rem;
-  letter-spacing: 0.7em;
+.visual-brand-name {
+  margin-block: 17px 8px;
+  max-width: 64%;
+  font-size: clamp(1.3rem, 3.2vw, 2rem);
+  white-space: normal;
 }
 
 .project-visual-afterglow {
@@ -2066,8 +2062,17 @@ img {
     font-size: clamp(3.3rem, 15vw, 4.8rem);
   }
 
-  .visual-serif {
-    font-size: clamp(2.35rem, 10vw, 3.3rem);
+  .project-visual-kyymidnight {
+    padding-right: 29%;
+  }
+
+  .brand-mascot-art {
+    right: 2%;
+    width: 32%;
+  }
+
+  .visual-brand-name {
+    font-size: clamp(1.25rem, 6vw, 1.6rem);
   }
 
   .project-content {
