@@ -362,38 +362,21 @@ const initializeAnimations = () => {
   ].join(", ");
   const revealTargets = [...document.querySelectorAll(revealSelector)];
 
-  const reveal = (targets) => {
-    anime({
-      targets,
-      opacity: [0, 1],
-      translateY: [18, 0],
-      delay: anime.stagger(90),
-      duration: 740,
-      easing: "easeOutCubic",
-    });
-  };
-
   if ("IntersectionObserver" in window) {
+    revealTargets.forEach((target) => target.classList.add("scroll-reveal"));
+
     const revealObserver = new IntersectionObserver(
       (entries) => {
-        const visibleTargets = entries
-          .filter((entry) => entry.isIntersecting)
-          .map((entry) => entry.target);
-
-        if (visibleTargets.length === 0) return;
-
-        revealObserver.unobserve(visibleTargets[0]);
-        for (const target of visibleTargets.slice(1)) {
-          revealObserver.unobserve(target);
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
         }
-        reveal(visibleTargets);
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+      { rootMargin: "0px 0px -4% 0px", threshold: 0.05 },
     );
 
     revealTargets.forEach((target) => revealObserver.observe(target));
-  } else {
-    reveal(revealTargets);
   }
 };
 
