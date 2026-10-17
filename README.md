@@ -1,0 +1,37 @@
+# KyyMidnight
+
+A lightweight, responsive single-page portfolio built with semantic HTML,
+vanilla CSS, JavaScript modules, and locally vendored Anime.js. The original
+transparent mascot poses are used through the `<coding-mascot>` web component.
+
+## Run locally
+
+From this folder in PowerShell:
+
+```powershell
+python -m http.server 8000
+```
+
+Open <http://localhost:8000> in your browser. Stop the server with `Ctrl+C`.
+Serving over HTTP lets the browser load JavaScript modules and the mascot PNGs.
+
+## Anime.js
+
+Anime.js 3.2.2 is pinned in `package.json` and vendored in
+`public/vendor/anime.es.js`, so the site animations do not rely on a CDN at
+runtime. To refresh the local copy after installing dependencies, run
+`npm install` and `npm run vendor:anime`. The package license is kept alongside
+the vendored library.
+
+## Personalize
+
+Edit `site-content.js` to update skills, projects, interests, learning topics,
+and contact details. Contact email and social links are intentionally empty
+until real accounts are supplied. Project imagery is clearly labeled as
+conceptual artwork rather than screenshots; add real project screenshots when
+they are available.
+
+All 15 original mascot PNGs are in `public/images/mascots/`. Use
+`<coding-mascot pose="thinking"></coding-mascot>` with any of the pose names:
+`neutral`, `happy`, `sleeping`, `alert`, `waving`, `thinking`, `cool`,
+`focused`, `coding`, `calm`, `napping`, `running`, `idea`, `love`, and `back`.

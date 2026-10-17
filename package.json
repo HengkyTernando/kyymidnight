@@ -1,0 +1,11 @@
+{
+  "name": "kyymidnight-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "vendor:anime": "node scripts/vendor-anime.js"
+  },
+  "dependencies": {
+    "animejs": "3.2.2"
+  }
+}

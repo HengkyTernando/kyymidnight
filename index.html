@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1426">
+    <meta
+      name="description"
+      content="I'm Kyy, an RPL student exploring UI/UX design, web development, and creative technology — somewhere between waves and midnight."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KyyMidnight — somewhere between waves and midnight">
+    <meta
+      property="og:description"
+      content="A personal corner for learning, making, and finding my own way."
+    >
+    <meta property="og:image" content="./public/images/mascots/neutral.png">
+    <link rel="icon" type="image/svg+xml" href="./public/images/kyy-midnight.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <title>KyyMidnight — Somewhere between waves and midnight</title>
+    <script type="module" src="./coding-mascot.js"></script>
+    <script type="module" src="./portfolio.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="wordmark" href="#home" aria-label="KyyMidnight home">
+          <span class="wordmark-icon" aria-hidden="true">k.</span>
+          <span>KyyMidnight</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-navigation" aria-label="Main navigation"></nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> Hello, world. I'm</p>
+          <h1 id="hero-title">Kyy<span class="title-blue">Midnight</span></h1>
+          <p class="hero-subtitle">Designing, building, and figuring things out.</p>
+          <p class="hero-description">
+            An RPL student exploring UI/UX design, web development, and creative
+            technology — one project at a time.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">
+              Explore my work <span aria-hidden="true">↘</span>
+            </a>
+            <a class="button button-quiet" href="#about">
+              Get to know me <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <p class="hero-note">somewhere between waves and midnight.</p>
+        </div>
+
+        <div class="hero-art" aria-label="KyyMidnight cat mascot">
+          <div class="moon-halo" aria-hidden="true"></div>
+          <span class="orbit orbit-one" aria-hidden="true"></span>
+          <span class="orbit orbit-two" aria-hidden="true"></span>
+          <span class="star star-one" aria-hidden="true">✳</span>
+          <span class="star star-two" aria-hidden="true">·</span>
+          <span class="star star-three" aria-hidden="true">✦</span>
+          <span class="art-caption">a little night owl<br>in a big blue world</span>
+          <coding-mascot
+            class="hero-mascot"
+            pose="neutral"
+            label="The original KyyMidnight cat mascot, looking quietly confident"
+            loading="eager"
+          ></coding-mascot>
+          <div class="wave wave-back" aria-hidden="true"></div>
+          <div class="wave wave-front" aria-hidden="true"></div>
+        </div>
+
+        <a class="scroll-cue" href="#about"><span></span> Scroll to explore</a>
+        <span class="hero-index" aria-hidden="true">01 / 08</span>
+      </section>
+
+      <section class="section section-about" id="about" aria-labelledby="about-title">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow">A little about me <span class="eyebrow-line"></span> 01</p>
+            <h2 id="about-title">Still learning.<br><span>Always curious.</span></h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-copy">
+              <p class="lead">
+                Hey, I'm Kyy. I'm an RPL student who enjoys exploring the
+                intersection of design and technology.
+              </p>
+              <p>
+                I like turning ideas into interfaces, experimenting with visual
+                styles, and building digital projects that combine creativity
+                with problem-solving. I'm especially interested in UI/UX design
+                and web development—not just how websites work, but how people
+                experience them.
+              </p>
+              <p>
+                I'm not trying to have everything figured out yet. I'm here to
+                learn, experiment, create, and document the journey along the way.
+                Welcome to my little corner of the internet.
+              </p>
+              <div class="about-signoff">
+                <span class="signoff-mark" aria-hidden="true">↗</span>
+                <span>Learning by making, one idea at a time.</span>
+              </div>
+            </div>
+
+            <figure class="about-figure">
+              <div class="figure-orbit" aria-hidden="true"></div>
+              <coding-mascot
+                pose="thinking"
+                label="The KyyMidnight cat mascot, thoughtfully considering an idea"
+                loading="lazy"
+              ></coding-mascot>
+              <figcaption>currently somewhere between an idea & a first draft</figcaption>
+            </figure>
+          </div>
+
+          <div class="principles" aria-label="What I enjoy">
+            <article class="principle">
+              <span class="principle-number">01</span>
+              <h3>Design</h3>
+              <p>Exploring layouts, typography, color, usability, and interface design.</p>
+            </article>
+            <article class="principle">
+              <span class="principle-number">02</span>
+              <h3>Development</h3>
+              <p>Turning designs and ideas into functional websites and applications.</p>
+            </article>
+            <article class="principle">
+              <span class="principle-number">03</span>
+              <h3>Exploration</h3>
+              <p>Learning tools, testing concepts, and getting a little better through projects.</p>
+            </article>
+          </div>
+
+          <blockquote class="personal-quote">
+            <span aria-hidden="true">“</span>
+            <p>I'm still learning, but every idea I build brings me one step further.</p>
+          </blockquote>
+          <div class="happy-aside">
+            <coding-mascot pose="happy" label="" loading="lazy"></coding-mascot>
+            <span>A small reminder to enjoy the process.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-skills" id="skills" aria-labelledby="skills-title">
+        <div class="section-wrap">
+          <div class="section-heading section-heading-split">
+            <div>
+              <p class="eyebrow">Curiosity, in practice <span class="eyebrow-line"></span> 02</p>
+              <h2 id="skills-title">Things I'm learning<br><span>and building with.</span></h2>
+            </div>
+            <p class="section-aside">
+              A snapshot of what I'm exploring right now. Still growing, always
+              open to learning more.
+            </p>
+          </div>
+
+          <div class="skills-layout">
+            <div class="skill-list" id="skill-list"></div>
+            <aside class="skills-note">
+              <div class="skills-note-top">
+                <span class="eyebrow">Current mode</span>
+                <span class="live-indicator">in progress</span>
+              </div>
+              <coding-mascot
+                pose="coding"
+                label="The KyyMidnight cat mascot working on a laptop"
+                loading="lazy"
+              ></coding-mascot>
+              <p>Learning by doing. Looking things up. Trying again.</p>
+              <span class="handwritten">one commit at a time <span aria-hidden="true">↗</span></span>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-wrap">
+          <div class="section-heading section-heading-split">
+            <div>
+              <p class="eyebrow">Small steps, real things <span class="eyebrow-line"></span> 03</p>
+              <h2 id="projects-title">Things I've<br><span>been working on.</span></h2>
+            </div>
+            <p class="section-aside">
+              A few project explorations where I get to bring design, code, and
+              curiosity into the same room.
+            </p>
+          </div>
+          <div class="project-grid" id="project-grid"></div>
+          <aside class="project-footnote" aria-label="Project progress">
+            <span aria-hidden="true">✳</span>
+            <p>
+              These are works in progress; more notes and real screenshots will
+              find their way here as the projects grow.
+            </p>
+            <coding-mascot
+              pose="focused"
+              label=""
+              loading="lazy"
+            ></coding-mascot>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-hobbies" id="hobbies" aria-labelledby="hobbies-title">
+        <div class="section-wrap">
+          <div class="section-heading section-heading-split">
+            <div>
+              <p class="eyebrow">A life outside the tabs <span class="eyebrow-line"></span> 04</p>
+              <h2 id="hobbies-title">Outside<br><span>the code.</span></h2>
+            </div>
+            <p class="section-aside">
+              The little things that keep me inspired, curious, and looking
+              beyond the screen.
+            </p>
+          </div>
+          <div class="interest-grid" id="interest-grid"></div>
+          <div class="hobby-mascot">
+            <coding-mascot pose="calm" label="" loading="lazy"></coding-mascot>
+            <p>slow days, soft songs, and room to think.</p>
+            <span aria-hidden="true">∿ ∿ ∿</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-journey" id="journey" aria-labelledby="journey-title">
+        <div class="section-wrap journey-layout">
+          <div class="section-heading">
+            <p class="eyebrow">No finish line in sight <span class="eyebrow-line"></span> 05</p>
+            <h2 id="journey-title">Still<br><span>becoming.</span></h2>
+            <p class="journey-intro">
+              Not a timeline of milestones checked off—just a direction I'm
+              happily heading in.
+            </p>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </div>
+        <p class="journey-quote">
+          Every project teaches me something new.<br>
+          <span>The journey is still in progress.</span>
+        </p>
+      </section>
+
+      <section class="section section-next" id="exploring" aria-labelledby="exploring-title">
+        <div class="section-wrap exploring-layout">
+          <div>
+            <p class="eyebrow">Open tabs, open mind <span class="eyebrow-line"></span> 06</p>
+            <h2 id="exploring-title">Currently<br><span>exploring.</span></h2>
+            <p class="section-aside">
+              A few questions and ideas I'm bringing into whatever I make next.
+            </p>
+          </div>
+          <ul class="explore-list" id="explore-list"></ul>
+        </div>
+      </section>
+
+      <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-glow" aria-hidden="true"></div>
+        <div class="section-wrap contact-layout">
+          <div class="contact-copy">
+            <p class="eyebrow">The internet feels smaller <span class="eyebrow-line"></span> 07</p>
+            <h2 id="contact-title">Let's<br><span>connect.</span></h2>
+            <p>
+              If you're interested in my projects, design, or creative
+              experiments, feel free to connect.
+            </p>
+            <div id="contact-action"></div>
+            <p class="contact-note" id="contact-note"></p>
+          </div>
+          <div class="contact-art">
+            <span class="contact-star" aria-hidden="true">✳</span>
+            <span class="contact-orbit" aria-hidden="true"></span>
+            <coding-mascot
+              pose="waving"
+              label="The KyyMidnight cat mascot waving hello"
+              loading="lazy"
+            ></coding-mascot>
+            <span class="contact-caption">say hello sometime</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main section-wrap">
+        <div class="footer-brand">
+          <a class="wordmark" href="#home">
+            <span class="wordmark-icon" aria-hidden="true">k.</span>
+            <span>KyyMidnight</span>
+          </a>
+          <p>Made with curiosity, a little midnight blue,<br>and many unfinished ideas.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation"></nav>
+        <a class="footer-mascot" href="#home" aria-label="Back to top">
+          <coding-mascot pose="back" label="" loading="lazy"></coding-mascot>
+          <span>back to the moon <span aria-hidden="true">↑</span></span>
+        </a>
+      </div>
+      <div class="footer-bottom section-wrap">
+        <span>© <span id="year"></span> KyyMidnight</span>
+        <span>somewhere between waves and midnight.</span>
+        <a href="#home" class="back-top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <a class="floating-top" href="#home" aria-label="Back to top">↑</a>
+  </body>
+</html>
