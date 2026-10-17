@@ -1837,52 +1837,6 @@ img {
   font-size: 0.64rem;
 }
 
-.back-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #b4c5d8;
-}
-
-.back-top .line-icon {
-  width: 16px;
-  height: 16px;
-}
-
-.floating-top {
-  position: fixed;
-  z-index: 10;
-  right: 22px;
-  bottom: 22px;
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  transform: translateY(12px);
-  border: 1px solid rgb(168 201 232 / 30%);
-  background: #10233f;
-  color: var(--moonlight);
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease,
-    visibility 180ms ease;
-}
-
-.floating-top .line-icon {
-  width: 21px;
-  height: 21px;
-}
-
-.floating-top.is-visible {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-}
-
 @media (min-width: 1500px) {
   .hero h1 {
     font-size: 8.7rem;
@@ -2470,10 +2424,6 @@ img {
     width: 100%;
   }
 
-  .floating-top {
-    right: 14px;
-    bottom: 14px;
-  }
 }
 
 @media (max-width: 380px) {

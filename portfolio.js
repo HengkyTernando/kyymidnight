@@ -306,15 +306,6 @@ if ("IntersectionObserver" in window) {
   sections.forEach((section) => observer.observe(section));
 }
 
-const floatingTop = document.querySelector(".floating-top");
-window.addEventListener(
-  "scroll",
-  () => {
-    floatingTop.classList.toggle("is-visible", window.scrollY > 720);
-  },
-  { passive: true },
-);
-
 const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const initializeAnimations = () => {
