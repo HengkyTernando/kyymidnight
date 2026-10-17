@@ -1630,18 +1630,54 @@ img {
 
 .social-links {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 10px;
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.social-links a {
+.social-links .social-link {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgb(168 201 232 / 23%);
+  border-radius: 50%;
   color: var(--mist);
-  font-size: 0.78rem;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.social-links .social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgb(168 201 232 / 55%);
+  background: rgb(168 201 232 / 8%);
+  color: var(--moonlight);
+}
+
+.social-link svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.social-link svg .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-link-fallback {
+  color: var(--mist);
+  font-size: 0;
 }
 
 .contact-art {
@@ -1685,13 +1721,17 @@ img {
 
 .contact-caption {
   position: absolute;
-  z-index: 3;
-  right: 0;
-  bottom: 15%;
+  z-index: 4;
+  right: 3%;
+  bottom: 2%;
+  padding: 5px 9px;
+  border: 1px solid rgb(168 201 232 / 18%);
+  background: rgb(11 20 38 / 88%);
   color: #a8bdd3;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.78rem;
   font-style: italic;
+  line-height: 1.4;
 }
 
 .site-footer {
@@ -2350,7 +2390,7 @@ img {
 
   .contact-caption {
     right: 3%;
-    bottom: 12%;
+    bottom: 1%;
   }
 
   .footer-main {

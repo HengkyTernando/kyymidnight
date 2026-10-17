@@ -200,6 +200,25 @@ const configuredSocials = siteConfig.contact.socials.filter(
     typeof url === "string" &&
     /^https?:\/\//.test(url),
 );
+const socialIcons = {
+  Instagram: `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle class="icon-fill" cx="17.5" cy="6.5" r="1"></circle>
+    </svg>
+  `,
+  TikTok: `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path class="icon-fill" d="M19.7 8.1a7.1 7.1 0 0 1-4.4-1.5v7.1a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.8 2.8 0 1 0 1.7 2.6V2.5h3.3c.2 2 1.9 3.7 4.2 3.9v1.7Z"></path>
+    </svg>
+  `,
+  Discord: `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path class="icon-fill" d="M19.7 5.2a18 18 0 0 0-4.4-1.4l-.6 1.3a16.7 16.7 0 0 0-5.4 0l-.6-1.3a18 18 0 0 0-4.4 1.4C1.5 9.3.7 13.3 1.1 17.2a18 18 0 0 0 5.4 2.7l1.2-2a11.8 11.8 0 0 1-1.9-.9l.5-.4a12.8 12.8 0 0 0 11.4 0l.5.4a11.8 11.8 0 0 1-1.9.9l1.2 2a18 18 0 0 0 5.4-2.7c.5-4.5-.8-8.5-3.2-12Zm-11 9.7c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"></path>
+    </svg>
+  `,
+};
 if (configuredSocials.length) {
   const socialList = document.createElement("ul");
   socialList.className = "social-links";
@@ -210,7 +229,12 @@ if (configuredSocials.length) {
     link.href = url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = label;
+    link.className = `social-link social-link-${label.toLowerCase()}`;
+    link.setAttribute("aria-label", label);
+    link.title = label;
+    link.innerHTML =
+      socialIcons[label] ??
+      `<span class="social-link-fallback">${escapeHtml(label)}</span>`;
     item.append(link);
     socialList.append(item);
   }

@@ -5,6 +5,7 @@ export const siteConfig = {
     socials: [
       { label: "Instagram", url: "https://instagram.com/kyymidnight" },
       { label: "TikTok", url: "https://www.tiktok.com/@kyymidnight" },
+      { label: "Discord", url: "https://discord.gg/Vqau7p2f" },
     ],
   },
 };
