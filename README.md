@@ -27,9 +27,11 @@ the vendored library.
 
 Edit `site-content.js` to update skills, projects, interests, learning topics,
 and contact details. Contact email and social links are intentionally empty
-until real accounts are supplied. Project imagery is clearly labeled as
-conceptual artwork rather than screenshots; add real project screenshots when
-they are available.
+until real accounts are supplied. The SiswaMart card is a visual recreation of
+its live homepage, using the site's food illustration in
+`public/images/projects/siswamart-food.png`; its link opens
+<https://siswamartid.my.id/>. The KyyMidnight card uses the original mascot
+artwork.
 
 All 15 original mascot PNGs are in `public/images/mascots/`. Use
 `<coding-mascot pose="thinking"></coding-mascot>` with any of the pose names:

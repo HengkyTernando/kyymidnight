@@ -68,12 +68,25 @@ document.querySelector("#project-grid").innerHTML = projects
   .map(
     (project) => `
       <article class="project-card">
-        <div class="project-visual project-visual-${escapeHtml(project.visual)}" role="img" aria-label="${escapeHtml(project.visualLabel)}. ${project.visual === "kyymidnight" ? "Original artwork presented in a brand concept, not a project screenshot." : "Conceptual artwork, not a project screenshot."}">
+        <div class="project-visual project-visual-${escapeHtml(project.visual)}" role="img" aria-label="${escapeHtml(project.visualLabel)}. ${project.visual === "kyymidnight" ? "Original artwork presented in a brand concept." : "Illustrated to reflect the live website's homepage."}">
           ${project.visual === "siswamart" ? `
-            <span class="visual-kicker">discover something local</span>
-            <span class="visual-large">siswa<span>mart</span></span>
-            <span class="visual-bar"><i></i><i></i><i></i><i></i></span>
-            <span class="visual-caption">school sellers · product discovery</span>
+            <div class="siswamart-preview">
+              <div class="siswamart-preview-nav">
+                <span class="siswamart-preview-logo">SiswaMart</span>
+                <span class="siswamart-preview-actions" aria-hidden="true"><i></i><i></i></span>
+              </div>
+              <div class="siswamart-preview-location">Untuk saat ini, SiswaMart melayani penjualan di area SMKN 11 Bandung.</div>
+              <div class="siswamart-preview-hero">
+                <div class="siswamart-preview-copy">
+                  <span>MAKAN ENAK.</span>
+                  <strong>BUATAN TEMAN SENDIRI.</strong>
+                  <p>Temukan makanan dan minuman karya siswa, pesan langsung lewat WhatsApp.</p>
+                  <div class="siswamart-preview-buttons"><i>JELAJAHI KATALOG</i><i>CARA MEMESAN</i></div>
+                </div>
+                <img src="./public/images/projects/siswamart-food.png" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="siswamart-preview-categories"><i>DESSERT</i><i>MAKANAN BERAT</i><i>MINUMAN</i><i>SNACK</i></div>
+            </div>
           ` : ""}
           ${project.visual === "kyymidnight" ? `
             <span class="visual-kicker">original artwork · ongoing identity</span>
@@ -87,14 +100,7 @@ document.querySelector("#project-grid").innerHTML = projects
             <span class="visual-large visual-brand-name">Kyy<span>Midnight</span></span>
             <span class="visual-caption">blue scarf · watercolor · a little attitude</span>
           ` : ""}
-          ${project.visual === "afterglow" ? `
-            <span class="landscape-moon" aria-hidden="true"></span>
-            <span class="landscape-hill hill-back" aria-hidden="true"></span>
-            <span class="landscape-hill hill-front" aria-hidden="true"></span>
-            <span class="landscape-dock" aria-hidden="true"></span>
-            <span class="landscape-caption">afterglow · a quiet place to wander</span>
-          ` : ""}
-          <span class="visual-disclaimer">${project.visual === "kyymidnight" ? "original mascot · brand concept" : "concept preview · not a project screenshot"}</span>
+          ${project.visual === "kyymidnight" ? '<span class="visual-disclaimer">original mascot · brand concept</span>' : ""}
         </div>
         <div class="project-content">
           <div class="project-meta">
@@ -109,6 +115,7 @@ document.querySelector("#project-grid").innerHTML = projects
           <ul class="project-tags" aria-label="Project themes">
             ${project.technologies.map((technology) => `<li>${escapeHtml(technology)}</li>`).join("")}
           </ul>
+          ${project.href ? `<a class="project-link" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true">↗</span></a>` : ""}
           <details class="project-details">
             <summary>Project notes <span aria-hidden="true">↗</span></summary>
             <dl>

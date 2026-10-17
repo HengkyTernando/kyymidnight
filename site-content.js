@@ -53,17 +53,18 @@ export const projects = [
   {
     number: "01",
     name: "SiswaMart",
-    category: "Web development · UI/UX",
+    category: "Web development · school food marketplace",
     description:
-      "A school-oriented product discovery and promotional catalog for products offered by school sellers. It helps students browse; actual buyer–seller transactions happen through WhatsApp, not website checkout.",
-    status: "Learning project · in progress",
-    technologies: ["Laravel", "Database", "Catalog & discovery"],
+      "A catalog for food and drinks made by students at SMKN 11 Bandung. Visitors can browse desserts, meals, drinks, and snacks, then arrange orders directly with sellers through WhatsApp.",
+    status: "Live website",
+    technologies: ["Product catalog", "Student sellers", "WhatsApp ordering"],
     visual: "siswamart",
-    visualLabel: "Product catalog concept",
+    visualLabel: "Illustrated preview of SiswaMart's live homepage",
+    href: "https://siswamartid.my.id/",
     notes: [
-      ["Focus", "Product catalog, categories, search, and seller information."],
-      ["Experience", "Responsive browsing; buyers contact sellers through WhatsApp."],
-      ["Status", "Learning project in progress. No project screenshots are available yet."],
+      ["Audience", "Students and school community at SMKN 11 Bandung."],
+      ["Catalog", "Desserts, meals, drinks, and snacks made by students."],
+      ["Ordering", "Customers contact sellers directly through WhatsApp."],
     ],
   },
   {
@@ -80,22 +81,6 @@ export const projects = [
       ["Focus", "A midnight-blue identity built around the supplied original cat mascot."],
       ["Implementation", "The 15 transparent poses are used by a reusable Web Component."],
       ["Status", "Ongoing personal branding project."],
-    ],
-  },
-  {
-    number: "03",
-    name: "AFTERGLOW",
-    category: "Roblox · environment design",
-    description:
-      "A Roblox environment-building exploration inspired by a quiet wilderness, natural terrain, a lake, and a wooden dock.",
-    status: "Creative exploration · in progress",
-    technologies: ["Roblox", "Environment composition", "Spatial design"],
-    visual: "afterglow",
-    visualLabel: "Quiet wilderness environment concept",
-    notes: [
-      ["Focus", "Atmosphere, natural terrain, a lake, and a wooden dock."],
-      ["Process", "Experimenting with composition and Roblox development tools."],
-      ["Status", "Creative exploration. No project screenshots are available yet."],
     ],
   },
 ];
@@ -119,14 +104,6 @@ export const interests = [
   },
   {
     number: "03",
-    symbol: "⌘",
-    title: "Roblox & gaming",
-    description:
-      "Exploring creative projects, game spaces, and the atmosphere a thoughtfully built environment can create.",
-    tone: "interest-game",
-  },
-  {
-    number: "04",
     symbol: "✳",
     title: "Technology & experiments",
     description:
@@ -134,7 +111,7 @@ export const interests = [
     tone: "interest-tech",
   },
   {
-    number: "05",
+    number: "04",
     symbol: "↗",
     title: "Running & exploring",
     description:
