@@ -12,7 +12,6 @@ export const siteConfig = {
 
 export const skillGroups = [
   {
-    number: "01",
     title: "UI/UX & design",
     note: "Learning to make interfaces feel clear and considered.",
     skills: [
@@ -24,7 +23,6 @@ export const skillGroups = [
     ],
   },
   {
-    number: "02",
     title: "Web development",
     note: "Getting comfortable building for the browser and the web.",
     skills: [
@@ -38,7 +36,6 @@ export const skillGroups = [
     ],
   },
   {
-    number: "03",
     title: "Creative & technical",
     note: "Connecting the idea, the interface, and how it works.",
     skills: [
@@ -56,7 +53,6 @@ export const skillGroups = [
 
 export const projects = [
   {
-    number: "01",
     name: "SiswaMart",
     category: "Web development · school food marketplace",
     description:
@@ -64,7 +60,7 @@ export const projects = [
     status: "Live website",
     technologies: ["Product catalog", "Student sellers", "WhatsApp ordering"],
     visual: "siswamart",
-    visualLabel: "Illustrated preview of SiswaMart's live homepage",
+    visualLabel: "Illustrated preview of SiswaMart’s live homepage",
     href: "https://siswamartid.my.id/",
     notes: [
       ["Audience", "Students and school community at SMKN 11 Bandung."],
@@ -73,7 +69,6 @@ export const projects = [
     ],
   },
   {
-    number: "02",
     name: "kyymidnight Mascot & Branding",
     category: "Visual identity · creative technology",
     description:
@@ -92,32 +87,24 @@ export const projects = [
 
 export const interests = [
   {
-    number: "01",
-    symbol: "∿",
     title: "Music",
     description:
       "Wave to earth and Yung Kai are part of the dreamy, ocean-blue feeling I like to bring into creative work.",
     tone: "interest-music",
   },
   {
-    number: "02",
-    symbol: "Aa",
     title: "UI/UX exploration",
     description:
       "Trying colors, type, and layouts; noticing the small choices that make a site feel easier to use.",
     tone: "interest-design",
   },
   {
-    number: "03",
-    symbol: "✳",
     title: "Technology & experiments",
     description:
       "Learning about software, web tools, and different ways to turn a passing idea into something you can try.",
     tone: "interest-tech",
   },
   {
-    number: "04",
-    symbol: "↗",
     title: "Running & exploring",
     description:
       "Interested in getting outside, going for a run, and seeing a little more of the places around me.",
@@ -148,5 +135,6 @@ export const navigation = [
   ["Skills", "#skills"],
   ["Projects", "#projects"],
   ["Hobbies", "#hobbies"],
+  ["Journey", "#journey"],
   ["Contact", "#contact"],
 ];

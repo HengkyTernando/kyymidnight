@@ -4,24 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b1426">
+    <link rel="canonical" href="https://kyymidnight.web.id/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..500&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@600..800&display=swap"
+      rel="stylesheet"
+    >
     <meta
       name="description"
-      content="I'm Kyy, an RPL student exploring UI/UX design, web development, and creative technology — somewhere between waves and midnight."
+      content="I’m Kyy, a Software Engineering (RPL) student exploring UI/UX design, web development, and creative technology — somewhere between waves and midnight."
     >
     <meta property="og:type" content="website">
-    <meta property="og:title" content="kyymidnight — somewhere between waves and midnight">
+    <meta property="og:title" content="kyymidnight — Somewhere between waves and midnight">
     <meta property="og:url" content="https://kyymidnight.web.id/">
     <meta
       property="og:description"
-      content="A personal corner for learning, making, and finding my own way."
+      content="A personal corner for a Software Engineering (RPL) student to learn, make, and find their own way."
     >
-    <meta property="og:image" content="https://kyymidnight.web.id/public/images/mascots/neutral.png">
-    <meta name="twitter:card" content="summary">
+    <meta
+      name="twitter:description"
+      content="A personal corner for a Software Engineering (RPL) student to learn, make, and find their own way."
+    >
+    <meta property="og:image" content="https://kyymidnight.web.id/public/images/og-image-1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:image" content="https://kyymidnight.web.id/public/images/og-image-1200x630.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="./public/images/kyy-midnight.svg">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=11">
     <title>kyymidnight — Somewhere between waves and midnight</title>
-    <script type="module" src="./coding-mascot.js"></script>
-    <script type="module" src="./portfolio.js"></script>
+    <script type="module" src="./coding-mascot.js?v=11"></script>
+    <script type="module" src="./portfolio.js?v=11"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -51,75 +66,78 @@
     <main id="main">
       <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> Hello, world. I'm</p>
+          <p class="eyebrow"><span class="status-dot"></span> Hello, world. I’m</p>
           <h1 id="hero-title">kyy<span class="title-blue">midnight</span></h1>
           <p class="hero-subtitle">Designing, building, and figuring things out.</p>
           <p class="hero-description">
-            An RPL student exploring UI/UX design, web development, and creative
-            technology — one project at a time.
+            A Software Engineering (RPL) student exploring UI/UX design, web development, and creative technology — one project at a time.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#projects">
               Explore my work
-              <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6 18 18M9 18h9V9"></path></svg>
+              <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7 7 7 7-7"></path></svg>
             </a>
             <a class="button button-quiet" href="#about">
               Get to know me
-              <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+              <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7 7 7 7-7"></path></svg>
             </a>
           </div>
           <p class="hero-note">somewhere between waves and midnight.</p>
         </div>
 
-        <div class="hero-art" aria-        label="kyymidnight cat mascot">
+        <div class="hero-art" role="group" aria-label="kyymidnight cat mascot">
           <div class="moon-halo" aria-hidden="true"></div>
           <span class="orbit orbit-one" aria-hidden="true"></span>
           <span class="orbit orbit-two" aria-hidden="true"></span>
           <svg class="star star-one line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 2.1 6.3L20 5l-3.3 5.9L23 13l-6.6.2L18 20l-5-4.2L8 22l1.7-6.4L3 17l4.7-4.7L2 9l6.5 1.2L8 3.5l4 5Z"></path></svg>
           <svg class="star star-two line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"></path></svg>
           <svg class="star star-three line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"></path></svg>
-          <span class="art-caption">a little night owl<br>in a big blue world</span>
+          <span class="art-caption mascot-caption">a little night owl<br>in a big blue world</span>
           <coding-mascot
             class="hero-mascot"
             pose="neutral"
             label="The original kyymidnight cat mascot, looking quietly confident"
             loading="eager"
+            role="button"
+            tabindex="0"
+            aria-label="Change the mascot’s mood"
+            aria-describedby="mascot-mood-hint"
           ></coding-mascot>
+          <span class="mascot-mood-hint" id="mascot-mood-hint">click or focus the mascot to change its mood</span>
+          <span class="visually-hidden" id="mascot-mood-status" aria-live="polite" aria-atomic="true"></span>
           <div class="wave wave-back" aria-hidden="true"></div>
           <div class="wave wave-front" aria-hidden="true"></div>
         </div>
 
         <a class="scroll-cue" href="#about"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16m-7-7 7 7 7-7"></path></svg> Scroll to explore</a>
-        <span class="hero-index" aria-hidden="true">01 / 08</span>
       </section>
 
       <section class="section section-about" id="about" aria-labelledby="about-title">
         <div class="section-wrap">
-          <div class="section-heading">
-            <p class="eyebrow">A little about me <span class="eyebrow-line"></span> 01</p>
-            <h2 id="about-title">Still learning.<br><span>Always curious.</span></h2>
-          </div>
-
           <div class="about-grid">
             <div class="about-copy">
+              <div class="section-heading">
+                <p class="eyebrow">A little about me <span class="eyebrow-line"></span> 01</p>
+                <h2 id="about-title">Still learning<span class="heading-period">.</span><br><span>Always curious<span class="heading-period">.</span></span></h2>
+              </div>
               <p class="lead">
-                Hey, I'm Kyy. I'm an RPL student who enjoys exploring the
-                intersection of design and technology.
+                Hey, I’m Kyy. I’m a Software Engineering student who enjoys
+                exploring the intersection of design and technology.
               </p>
               <p>
                 I like turning ideas into interfaces, experimenting with visual
                 styles, and building digital projects that combine creativity
-                with problem-solving. I'm especially interested in UI/UX design
+                with problem-solving. I’m especially interested in UI/UX design
                 and web development—not just how websites work, but how people
                 experience them.
               </p>
               <p>
-                I'm not trying to have everything figured out yet. I'm here to
+                I’m not trying to have everything figured out yet. I’m here to
                 learn, experiment, create, and document the journey along the way.
                 Welcome to my little corner of the internet.
               </p>
               <div class="about-signoff">
-                <span class="signoff-mark" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
+                <span class="signoff-mark" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"></path></svg></span>
                 <span>Learning by making, one idea at a time.</span>
               </div>
             </div>
@@ -131,23 +149,20 @@
                 label="The kyymidnight cat mascot, thoughtfully considering an idea"
                 loading="lazy"
               ></coding-mascot>
-              <figcaption>currently somewhere between an idea & a first draft</figcaption>
+              <figcaption class="mascot-caption">currently somewhere between an idea & a first draft</figcaption>
             </figure>
           </div>
 
           <div class="principles" aria-label="What I enjoy">
             <article class="principle">
-              <span class="principle-number">01</span>
               <h3>Design</h3>
               <p>Exploring layouts, typography, color, usability, and interface design.</p>
             </article>
             <article class="principle">
-              <span class="principle-number">02</span>
               <h3>Development</h3>
               <p>Turning designs and ideas into functional websites and applications.</p>
             </article>
             <article class="principle">
-              <span class="principle-number">03</span>
               <h3>Exploration</h3>
               <p>Learning tools, testing concepts, and getting a little better through projects.</p>
             </article>
@@ -155,7 +170,7 @@
 
           <blockquote class="personal-quote">
             <span aria-hidden="true">“</span>
-            <p>I'm still learning, but every idea I build brings me one step further.</p>
+            <p>I’m still learning, but every idea I build brings me one step further.</p>
           </blockquote>
           <div class="happy-aside">
             <coding-mascot pose="happy" label="" loading="lazy"></coding-mascot>
@@ -169,10 +184,10 @@
           <div class="section-heading section-heading-split">
             <div>
               <p class="eyebrow">Curiosity, in practice <span class="eyebrow-line"></span> 02</p>
-              <h2 id="skills-title">Things I'm learning<br><span>and building with.</span></h2>
+              <h2 id="skills-title">Things I’m learning<br><span>and building with<span class="heading-period">.</span></span></h2>
             </div>
             <p class="section-aside">
-              A snapshot of what I'm exploring right now. Still growing, always
+              A snapshot of what I’m exploring right now. Still growing, always
               open to learning more.
             </p>
           </div>
@@ -181,7 +196,7 @@
             <div class="skill-list" id="skill-list"></div>
             <aside class="skills-note">
               <div class="skills-note-top">
-                <span class="eyebrow">Current mode</span>
+                <span class="skills-note-label">Current mode</span>
                 <span class="live-indicator">in progress</span>
               </div>
               <coding-mascot
@@ -190,7 +205,7 @@
                 loading="lazy"
               ></coding-mascot>
               <p>Learning by doing. Looking things up. Trying again.</p>
-              <span class="handwritten">one commit at a time <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
+              <span class="handwritten">one commit at a time <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg></span>
             </aside>
           </div>
         </div>
@@ -201,7 +216,7 @@
           <div class="section-heading section-heading-split">
             <div>
               <p class="eyebrow">Small steps, real things <span class="eyebrow-line"></span> 03</p>
-              <h2 id="projects-title">Things I've<br><span>been working on.</span></h2>
+              <h2 id="projects-title">Things I’ve<br><span>been working on<span class="heading-period">.</span></span></h2>
             </div>
             <p class="section-aside">
               A few project explorations where I get to bring design, code, and
@@ -215,11 +230,6 @@
               These are works in progress; more notes and real screenshots will
               find their way here as the projects grow.
             </p>
-            <coding-mascot
-              pose="focused"
-              label=""
-              loading="lazy"
-            ></coding-mascot>
           </aside>
         </div>
       </section>
@@ -229,7 +239,7 @@
           <div class="section-heading section-heading-split">
             <div>
               <p class="eyebrow">A life outside the tabs <span class="eyebrow-line"></span> 04</p>
-              <h2 id="hobbies-title">Outside<br><span>the code.</span></h2>
+              <h2 id="hobbies-title">Outside<br><span>the code<span class="heading-period">.</span></span></h2>
             </div>
             <p class="section-aside">
               The little things that keep me inspired, curious, and looking
@@ -246,33 +256,31 @@
       </section>
 
       <section class="section section-journey" id="journey" aria-labelledby="journey-title">
-        <div class="section-wrap journey-layout">
-          <div class="section-heading">
-            <p class="eyebrow">No finish line in sight <span class="eyebrow-line"></span> 05</p>
-            <h2 id="journey-title">Still<br><span>becoming.</span></h2>
-            <p class="journey-intro">
-              Not a timeline of milestones checked off—just a direction I'm
-              happily heading in.
-            </p>
+        <div class="section-wrap">
+          <div class="journey-layout">
+            <div class="section-heading">
+              <p class="eyebrow">No finish line in sight <span class="eyebrow-line"></span> 05</p>
+              <h2 id="journey-title">Still<br><span>becoming<span class="heading-period">.</span></span></h2>
+              <p class="journey-intro">
+                Not a timeline of milestones checked off—just a direction I’m
+                happily heading in.
+              </p>
+            </div>
+            <div class="timeline" id="timeline"></div>
           </div>
-          <div class="timeline" id="timeline"></div>
-        </div>
-        <p class="journey-quote">
-          Every project teaches me something new.<br>
-          <span>The journey is still in progress.</span>
-        </p>
-      </section>
-
-      <section class="section section-next" id="exploring" aria-labelledby="exploring-title">
-        <div class="section-wrap exploring-layout">
-          <div>
-            <p class="eyebrow">Open tabs, open mind <span class="eyebrow-line"></span> 06</p>
-            <h2 id="exploring-title">Currently<br><span>exploring.</span></h2>
-            <p class="section-aside">
-              A few questions and ideas I'm bringing into whatever I make next.
-            </p>
+          <p class="journey-quote">
+            Every project teaches me something new.<br>
+            <span>The journey is still in progress.</span>
+          </p>
+          <div class="exploring-layout journey-next-up" id="exploring">
+            <div>
+              <h3 id="exploring-title" class="journey-next-heading">Currently<br><span>exploring<span class="heading-period">.</span></span></h3>
+              <p class="section-aside">
+                A few questions and ideas I’m bringing into whatever I make next.
+              </p>
+            </div>
+            <ul class="explore-list" id="explore-list"></ul>
           </div>
-          <ul class="explore-list" id="explore-list"></ul>
         </div>
       </section>
 
@@ -280,10 +288,10 @@
         <div class="contact-glow" aria-hidden="true"></div>
         <div class="section-wrap contact-layout">
           <div class="contact-copy">
-            <p class="eyebrow">The internet feels smaller <span class="eyebrow-line"></span> 07</p>
-            <h2 id="contact-title">Let's<br><span>connect.</span></h2>
+            <p class="eyebrow">The internet feels smaller <span class="eyebrow-line"></span> 06</p>
+            <h2 id="contact-title">Let’s<br><span>connect<span class="heading-period">.</span></span></h2>
             <p>
-              If you're interested in my projects, design, or creative
+              If you’re interested in my projects, design, or creative
               experiments, feel free to connect.
             </p>
             <div id="contact-action"></div>
@@ -297,7 +305,7 @@
               label="The kyymidnight cat mascot waving hello"
               loading="lazy"
             ></coding-mascot>
-            <span class="contact-caption">say hello sometime</span>
+            <span class="contact-caption mascot-caption">say hello sometime</span>
           </div>
         </div>
       </section>

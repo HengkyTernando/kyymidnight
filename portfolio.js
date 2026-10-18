@@ -7,7 +7,7 @@ import {
   projects,
   siteConfig,
   skillGroups,
-} from "./site-content.js";
+} from "./site-content.js?v=11";
 
 const escapeHtml = (value) =>
   String(value).replace(/[&<>"']/g, (character) => {
@@ -25,8 +25,18 @@ const arrowIcon = (direction = "northeast") => {
   const paths = {
     northeast: "M7 17 17 7M8 7h9v9",
     right: "M5 12h14m-6-6 6 6-6 6",
+    down: "M12 5v14m-7-7 7 7 7-7",
+    up: "M12 19V5m-7 7 7-7 7 7",
+    chevronDown: "m6 9 6 6 6-6",
   };
   return `<svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${paths[direction]}"></path></svg>`;
+};
+
+const interestIcons = {
+  "interest-music": '<svg viewBox="0 0 24 24" focusable="false"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>',
+  "interest-design": '<svg viewBox="0 0 24 24" focusable="false"><path d="M5 5h14M12 5v14"></path><path d="M7 19h10"></path></svg>',
+  "interest-tech": '<svg viewBox="0 0 24 24" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4m-2-11-2 14"></path></svg>',
+  "interest-outdoors": '<svg viewBox="0 0 24 24" focusable="false"><circle cx="15" cy="5" r="2"></circle><path d="m13 8-4 5 4 2 2 5m-6-8-4-1-2 3m12-4 4 1"></path></svg>',
 };
 
 const mainNavigation = document.querySelector("#site-navigation");
@@ -34,7 +44,7 @@ mainNavigation.innerHTML = navigation
   .map(([label, href]) => {
     const contactClass = href === "#contact" ? ' class="nav-contact"' : "";
     const current = href === "#home" ? ' aria-current="location"' : "";
-    const arrow = href === "#contact" ? ` ${arrowIcon()}` : "";
+    const arrow = href === "#contact" ? ` ${arrowIcon("down")}` : "";
     return `<a href="${escapeHtml(href)}"${contactClass}${current}>${escapeHtml(label)}${arrow}</a>`;
   })
   .join("");
@@ -52,7 +62,6 @@ skillList.innerHTML = skillGroups
     (group) => `
       <article class="skill-group">
         <div class="skill-group-heading">
-          <span class="skill-number">${escapeHtml(group.number)}</span>
           <div>
             <h3>${escapeHtml(group.title)}</h3>
             <p>${escapeHtml(group.note)}</p>
@@ -62,7 +71,7 @@ skillList.innerHTML = skillGroups
           ${group.skills
             .map(
               ([name, state]) => `
-                <li><span>${escapeHtml(name)}</span><small>${escapeHtml(state)}</small></li>
+                <li><span>${escapeHtml(name)}</span><small data-state="${escapeHtml(state)}">${escapeHtml(state)}</small></li>
               `,
             )
             .join("")}
@@ -76,9 +85,9 @@ document.querySelector("#project-grid").innerHTML = projects
   .map(
     (project) => `
       <article class="project-card">
-        <div class="project-visual project-visual-${escapeHtml(project.visual)}" role="img" aria-label="${escapeHtml(project.visualLabel)}. ${project.visual === "kyymidnight" ? "Original artwork presented in a brand concept." : "Illustrated to reflect the live website's homepage."}">
+        <div class="project-visual project-visual-${escapeHtml(project.visual)}" role="img" aria-label="${escapeHtml(project.visualLabel)}. ${project.visual === "kyymidnight" ? "Original artwork presented in a brand concept." : "Illustrated to reflect the live website’s homepage."}">
           ${project.visual === "siswamart" ? `
-            <div class="siswamart-preview">
+            <div class="siswamart-preview" lang="id">
               <div class="siswamart-preview-nav">
                 <span class="siswamart-preview-logo">SiswaMart</span>
                 <span class="siswamart-preview-actions" aria-hidden="true"><i></i><i></i></span>
@@ -91,7 +100,7 @@ document.querySelector("#project-grid").innerHTML = projects
                   <p>Temukan makanan dan minuman karya siswa, pesan langsung lewat WhatsApp.</p>
                   <div class="siswamart-preview-buttons"><i>JELAJAHI KATALOG</i><i>CARA MEMESAN</i></div>
                 </div>
-                <img src="./public/images/projects/siswamart-food.png" alt="" loading="lazy" decoding="async">
+                <img src="./public/images/projects/siswamart-food.webp" alt="" width="1024" height="1024" loading="lazy" decoding="async">
               </div>
               <div class="siswamart-preview-categories"><i>DESSERT</i><i>MAKANAN BERAT</i><i>MINUMAN</i><i>SNACK</i></div>
             </div>
@@ -100,8 +109,10 @@ document.querySelector("#project-grid").innerHTML = projects
             <span class="visual-kicker">original artwork · ongoing identity</span>
             <img
               class="brand-mascot-art"
-              src="./public/images/mascots/alert.png"
+              src="./public/images/mascots/alert.webp"
               alt=""
+              width="316"
+              height="342"
               loading="lazy"
               decoding="async"
             >
@@ -113,29 +124,30 @@ document.querySelector("#project-grid").innerHTML = projects
         <div class="project-content">
           <div class="project-meta">
             <span>${escapeHtml(project.category)}</span>
-            <span class="project-number">${escapeHtml(project.number)}</span>
           </div>
           <div class="project-title-row">
             <h3>${escapeHtml(project.name)}</h3>
-            <span class="project-status"><i></i>${escapeHtml(project.status)}</span>
+            <span class="project-status status-pill status-${/live/i.test(project.status) ? "live" : /concept/i.test(project.status) ? "concept" : "ongoing"}"><i></i>${escapeHtml(project.status)}</span>
           </div>
           <p class="project-description">${escapeHtml(project.description)}</p>
           <ul class="project-tags" aria-label="Project themes">
             ${project.technologies.map((technology) => `<li>${escapeHtml(technology)}</li>`).join("")}
           </ul>
-          ${project.href ? `<a class="project-link" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer">Visit live website ${arrowIcon()}</a>` : ""}
-          <details class="project-details">
-            <summary>Project notes <span>${arrowIcon()}</span></summary>
-            <dl>
-              ${project.notes
-                .map(
-                  ([term, detail]) => `
-                    <div><dt>${escapeHtml(term)}</dt><dd>${escapeHtml(detail)}</dd></div>
-                  `,
-                )
-                .join("")}
-            </dl>
-          </details>
+          <div class="project-actions">
+            ${project.href ? `<a class="project-link" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer">Visit live website ${arrowIcon()}</a>` : ""}
+            <details class="project-details">
+              <summary>Project notes <span>${arrowIcon("chevronDown")}</span></summary>
+              <dl>
+                ${project.notes
+                  .map(
+                    ([term, detail]) => `
+                      <div><dt>${escapeHtml(term)}</dt><dd>${escapeHtml(detail)}</dd></div>
+                    `,
+                  )
+                  .join("")}
+              </dl>
+            </details>
+          </div>
         </div>
       </article>
     `,
@@ -145,10 +157,9 @@ document.querySelector("#project-grid").innerHTML = projects
 document.querySelector("#interest-grid").innerHTML = interests
   .map(
     (interest) => `
-      <article class="interest-card ${escapeHtml(interest.tone)}">
+      <article class="interest-card card ${escapeHtml(interest.tone)}">
         <div class="interest-top">
-          <span class="interest-symbol" aria-hidden="true">${escapeHtml(interest.symbol)}</span>
-          <span class="interest-number">${escapeHtml(interest.number)}</span>
+          <span class="interest-symbol" aria-hidden="true">${interestIcons[interest.tone]}</span>
         </div>
         <h3>${escapeHtml(interest.title)}</h3>
         <p>${escapeHtml(interest.description)}</p>
@@ -172,7 +183,7 @@ document.querySelector("#timeline").innerHTML = journey
 document.querySelector("#explore-list").innerHTML = exploringNext
   .map(
     (topic) => `
-      <li><span class="explore-arrow" aria-hidden="true">${arrowIcon()}</span>${escapeHtml(topic)}</li>
+      <li><span class="explore-bullet" aria-hidden="true"></span>${escapeHtml(topic)}</li>
     `,
   )
   .join("");
@@ -199,7 +210,7 @@ if (siteConfig.contact.whatsapp) {
     </button>
   `;
   contactNote.textContent =
-    "No email or social links have been configured yet. Add real contact details in site-content.js when you're ready.";
+    "No email or social links have been configured yet. Add real contact details in site-content.js when you’re ready.";
 }
 
 const configuredSocials = siteConfig.contact.socials.filter(
@@ -240,11 +251,15 @@ if (configuredSocials.length) {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.className = `social-link social-link-${label.toLowerCase()}`;
-    link.setAttribute("aria-label", label);
-    link.title = label;
+    const socialUrl = new URL(url);
+    const socialTarget = label === "Discord"
+      ? `${socialUrl.hostname}${socialUrl.pathname.replace(/\/$/, "")}`
+      : `@${socialUrl.pathname.split("/").filter(Boolean).at(-1)?.replace(/^@/, "") ?? label}`;
+    link.setAttribute("aria-label", `${label}: ${socialTarget}`);
+    link.title = `${label}: ${socialTarget}`;
     link.innerHTML =
-      socialIcons[label]?.replace(/class="icon-fill"/g, "") ??
-      `<span class="social-link-fallback">${escapeHtml(label)}</span>`;
+      `${socialIcons[label]?.replace(/class="icon-fill"/g, "") ??
+      `<span class="social-link-fallback">${escapeHtml(label)}</span>`}<span class="social-link-label">${escapeHtml(socialTarget)}</span>`;
     item.append(link);
     socialList.append(item);
   }
@@ -307,6 +322,55 @@ if ("IntersectionObserver" in window) {
 }
 
 const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+const animationDuration = (token) => {
+  const value = getComputedStyle(document.documentElement)
+    .getPropertyValue(token)
+    .trim();
+  const duration = Number.parseFloat(value);
+  if (!Number.isFinite(duration)) {
+    throw new Error(`Missing animation duration token: ${token}`);
+  }
+  return duration;
+};
+
+const heroMascot = document.querySelector(".hero-mascot");
+const mascotMoodStatus = document.querySelector("#mascot-mood-status");
+const mascotMoods = [
+  "neutral",
+  "happy",
+  "idea",
+  "love",
+  "cool",
+  "thinking",
+  "alert",
+  "waving",
+  "coding",
+  "focused",
+  "calm",
+];
+let mascotMoodIndex = 0;
+
+const changeMascotMood = () => {
+  mascotMoodIndex = (mascotMoodIndex + 1) % mascotMoods.length;
+  const mood = mascotMoods[mascotMoodIndex];
+  heroMascot.setAttribute("pose", mood);
+  mascotMoodStatus.textContent = `Mascot mood: ${mood}.`;
+};
+
+heroMascot.addEventListener("click", changeMascotMood);
+heroMascot.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  event.preventDefault();
+  changeMascotMood();
+});
+
+motionPreference.addEventListener("change", (event) => {
+  if (!event.matches) return;
+  anime.remove(".hero-mascot, .moon-halo");
+  document
+    .querySelectorAll(".scroll-reveal")
+    .forEach((element) => element.classList.add("is-visible"));
+});
 
 const initializeAnimations = () => {
   if (
@@ -321,7 +385,7 @@ const initializeAnimations = () => {
   const intro = anime.timeline({
     defaults: {
       easing: "easeOutCubic",
-      duration: 760,
+      duration: animationDuration("--motion-intro"),
     },
   });
 
@@ -330,14 +394,14 @@ const initializeAnimations = () => {
       targets: ".hero-copy > *",
       opacity: [0, 1],
       translateY: [16, 0],
-      delay: anime.stagger(100),
+      delay: anime.stagger(animationDuration("--motion-stagger")),
     })
     .add(
       {
         targets: ".moon-halo, .orbit, .star, .art-caption, .wave",
         opacity: [0, 1],
-        delay: anime.stagger(75),
-        duration: 850,
+        delay: anime.stagger(animationDuration("--motion-stagger-secondary")),
+        duration: animationDuration("--motion-fade"),
       },
       0,
     )
@@ -346,7 +410,7 @@ const initializeAnimations = () => {
         targets: ".hero-mascot",
         opacity: [0, 1],
         translateY: [10, 0],
-        duration: 900,
+        duration: animationDuration("--motion-mascot"),
       },
       "-=720",
     );
@@ -362,7 +426,7 @@ const initializeAnimations = () => {
     anime({
       targets: ".hero-mascot",
       translateY: [0, -7],
-      duration: 4600,
+      duration: animationDuration("--motion-ambient-float"),
       easing: "easeInOutSine",
       direction: "alternate",
       loop: true,
@@ -370,7 +434,7 @@ const initializeAnimations = () => {
     anime({
       targets: ".moon-halo",
       opacity: [0.78, 1],
-      duration: 3600,
+      duration: animationDuration("--motion-ambient-glow"),
       easing: "easeInOutSine",
       direction: "alternate",
       loop: true,

@@ -1,28 +1,38 @@
 const MASCOT_POSES = {
-  neutral: { file: "neutral.png", label: "Kucing maskot" },
-  happy: { file: "happy.png", label: "Kucing maskot sedang senang" },
-  sleeping: { file: "sleeping.png", label: "Kucing maskot sedang tidur" },
-  alert: { file: "alert.png", label: "Kucing maskot sedang waspada" },
-  waving: { file: "waving.png", label: "Kucing maskot sedang melambai" },
+  neutral: { file: "neutral.webp", label: "Kucing maskot" },
+  happy: { file: "happy.webp", label: "Kucing maskot sedang senang" },
+  sleeping: { file: "sleeping.webp", label: "Kucing maskot sedang tidur" },
+  alert: { file: "alert.webp", label: "Kucing maskot sedang waspada" },
+  waving: { file: "waving.webp", label: "Kucing maskot sedang melambai" },
   thinking: {
-    file: "thinking.png",
+    file: "thinking.webp",
     label: "Kucing maskot sedang berpikir",
   },
   cool: {
-    file: "cool.png",
+    file: "cool.webp",
     label: "Kucing maskot memakai kacamata hitam",
   },
-  focused: { file: "focused.png", label: "Kucing maskot sedang fokus" },
-  coding: { file: "coding.png", label: "Kucing maskot sedang coding" },
-  calm: { file: "calm.png", label: "Kucing maskot sedang santai" },
+  focused: { file: "focused.webp", label: "Kucing maskot sedang fokus" },
+  coding: { file: "coding.webp", label: "Kucing maskot sedang coding" },
+  calm: { file: "calm.webp", label: "Kucing maskot sedang santai" },
   napping: {
-    file: "napping.png",
+    file: "napping.webp",
     label: "Kucing maskot sedang tidur pulas",
   },
-  running: { file: "running.png", label: "Kucing maskot sedang berlari" },
-  idea: { file: "idea.png", label: "Kucing maskot mendapat ide" },
-  love: { file: "love.png", label: "Kucing maskot sedang jatuh cinta" },
-  back: { file: "back.png", label: "Kucing maskot tampak dari belakang" },
+  running: { file: "running.webp", label: "Kucing maskot sedang berlari" },
+  idea: { file: "idea.webp", label: "Kucing maskot mendapat ide" },
+  love: { file: "love.webp", label: "Kucing maskot sedang jatuh cinta" },
+  back: { file: "back.webp", label: "Kucing maskot tampak dari belakang" },
+};
+
+const getMotionDuration = (token) => {
+  const duration = Number.parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(token),
+  );
+  if (!Number.isFinite(duration)) {
+    throw new Error(`Missing animation duration token: ${token}`);
+  }
+  return duration;
 };
 
 class CodingMascot extends HTMLElement {
@@ -49,9 +59,11 @@ class CodingMascot extends HTMLElement {
           object-fit: contain;
         }
       </style>
-      <img part="image" decoding="async">
+      <img part="image" width="305" height="330" decoding="async">
     `;
     this.image = shadow.querySelector("img");
+    this.currentPose = null;
+    this.imageAnimation = null;
   }
 
   connectedCallback() {
@@ -75,10 +87,31 @@ class CodingMascot extends HTMLElement {
     }
 
     const selectedPose = pose || MASCOT_POSES.coding;
-    this.image.src = new URL(
-      `./public/images/mascots/${selectedPose.file}`,
-      import.meta.url,
-    ).href;
+    if (selectedPose !== this.currentPose) {
+      this.image.src = new URL(
+        `./public/images/mascots/${selectedPose.file}`,
+        import.meta.url,
+      ).href;
+      if (
+        this.currentPose &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+        typeof this.image.animate === "function"
+      ) {
+        this.imageAnimation?.cancel();
+        this.imageAnimation = this.image.animate(
+          [
+            { opacity: 0.72, transform: "scale(0.96) rotate(-2deg)" },
+            { opacity: 1, transform: "scale(1.03) rotate(1deg)", offset: 0.55 },
+            { opacity: 1, transform: "scale(1) rotate(0deg)" },
+          ],
+          {
+            duration: getMotionDuration("--motion-medium"),
+            easing: "ease-out",
+          },
+        );
+      }
+      this.currentPose = selectedPose;
+    }
     this.image.loading = this.getAttribute("loading") === "eager" ? "eager" : "lazy";
 
     const label = this.hasAttribute("label")

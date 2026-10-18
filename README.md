@@ -37,3 +37,8 @@ All 15 original mascot PNGs are in `public/images/mascots/`. Use
 `<coding-mascot pose="thinking"></coding-mascot>` with any of the pose names:
 `neutral`, `happy`, `sleeping`, `alert`, `waving`, `thinking`, `cool`,
 `focused`, `coding`, `calm`, `napping`, `running`, `idea`, `love`, and `back`.
+On the home page, click the hero mascot or activate it with Enter/Space to
+cycle through moods. Pose changes animate unless reduced motion is enabled.
+The component serves optimized WebP copies of the original poses; the PNG
+source art remains available. Social previews use the generated
+`public/images/og-image-1200x630.png` image.
